@@ -1,0 +1,4 @@
+POST https://smlfwra.siammakro.co.th/global-protect/prelogin.esp?tmp=tmp&clientVer=4100&clientos=Linux
+getaddrinfo failed for host 'smlfwra.siammakro.co.th': Name or service not known
+Failed to open HTTPS connection to smlfwra.siammakro.co.th
+Failed to obtain WebVPN cookie

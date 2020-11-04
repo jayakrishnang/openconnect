@@ -1,0 +1,35 @@
+POST https://smlfwra.siammakro.co.th/global-protect/prelogin.esp?tmp=tmp&clientVer=4100&clientos=Linux
+Connected to 203.144.233.229:443
+Using client certificate '/C=TH/O=SI_Engineer/CN=SI_Engineer_Himanshu_pa@engineer.com/emailAddress=SI_Engineer_Himanshu_pa@engineer.com'
+SSL negotiation with smlfwra.siammakro.co.th
+Server certificate verify failed: self signed certificate in certificate chain
+Connected to HTTPS on smlfwra.siammakro.co.th with ciphersuite TLSv1.2-AES256-GCM-SHA384
+Enter login credentials
+POST https://smlfwra.siammakro.co.th/global-protect/getconfig.esp
+Portal set HIP report interval to 60 minutes).
+1 gateway servers available:
+  GW (smlfwra.siammakro.co.th)
+Please select GlobalProtect gateway.
+GATEWAY: [GW]:GW
+POST https://smlfwra.siammakro.co.th/ssl-vpn/login.esp
+GlobalProtect login returned authentication-source=Remote Access
+POST https://smlfwra.siammakro.co.th/ssl-vpn/getconfig.esp
+Session will expire after 43200 minutes.
+Tunnel timeout (rekey interval) is 180 minutes.
+Idle timeout is 180 minutes.
+No MTU received. Calculated 8926 for ESP tunnel
+POST https://smlfwra.siammakro.co.th/ssl-vpn/hipreportcheck.esp
+WARNING: Server asked us to submit HIP report with md5sum e3f8919d5d0b47b6a70680c429fc671c.
+    VPN connectivity may be disabled or limited without HIP report submission.
+    You need to provide a --csd-wrapper argument with the HIP report submission script.
+Connected as 10.82.0.47, using SSL, with ESP in progress
+ESP session established with server
+ESP tunnel connected; exiting HTTPS mainloop.
+POST https://smlfwra.siammakro.co.th/ssl-vpn/logout.esp
+SSL negotiation with smlfwra.siammakro.co.th
+Server certificate verify failed: self signed certificate in certificate chain
+Connected to HTTPS on smlfwra.siammakro.co.th with ciphersuite TLSv1.2-AES256-GCM-SHA384
+Logout successful.
+RTNETLINK answers: No such process
+RTNETLINK answers: No such process
+User cancelled (SIGINT/SIGTERM); exiting.

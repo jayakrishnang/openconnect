@@ -1,0 +1,20 @@
+POST https://smlfwra.siammakro.co.th/global-protect/prelogin.esp?tmp=tmp&clientVer=4100&clientos=Linux
+Connected to 203.144.233.229:443
+Using client certificate '/C=TH/O=SI_Engineer/CN=SI_Engineer_Himanshu_pa@engineer.com/emailAddress=SI_Engineer_Himanshu_pa@engineer.com'
+SSL negotiation with smlfwra.siammakro.co.th
+Server certificate verify failed: self signed certificate in certificate chain
+Connected to HTTPS on smlfwra.siammakro.co.th with ciphersuite TLSv1.2-AES256-GCM-SHA384
+Enter login credentials
+POST https://smlfwra.siammakro.co.th/global-protect/getconfig.esp
+Portal set HIP report interval to 60 minutes).
+1 gateway servers available:
+  GW (smlfwra.siammakro.co.th)
+Please select GlobalProtect gateway.
+GATEWAY: [GW]:GW
+POST https://smlfwra.siammakro.co.th/ssl-vpn/login.esp
+Got HTTP response: HTTP/1.1 512 Custom error
+Unexpected 512 result from server
+POST https://smlfwra.siammakro.co.th/ssl-vpn/prelogin.esp?tmp=tmp&clientVer=4100&clientos=Linux
+Enter login credentials
+Password: 
+fgets (stdin): Inappropriate ioctl for device

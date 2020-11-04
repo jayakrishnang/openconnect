@@ -281,12 +281,7 @@ int openconnect_obtain_cookie(struct openconnect_info *vpninfo)
 
 int openconnect_make_cstp_connection(struct openconnect_info *vpninfo)
 {
-	int result = vpninfo->proto->tcp_connect(vpninfo);
-
-	/* ssl_times.last_tx should be set to show that a connection has been setup */
-	if (result == 0 && vpninfo->ssl_times.last_tx == 0)
-		vpninfo->ssl_times.last_tx = time(NULL);
-	return result;
+	return vpninfo->proto->tcp_connect(vpninfo);
 }
 
 int openconnect_set_reported_os(struct openconnect_info *vpninfo,
@@ -995,12 +990,6 @@ int openconnect_setup_tun_device(struct openconnect_info *vpninfo,
 	STRDUP(vpninfo->ifname, ifname);
 
 	prepare_script_env(vpninfo);
-
-	legacy_ifname = openconnect_utf8_to_legacy(vpninfo, vpninfo->ifname);
-	script_setenv(vpninfo, "TUNDEV", legacy_ifname, 0, 0);
-	if (legacy_ifname != vpninfo->ifname)
-		free(legacy_ifname);
-
 	script_config_tun(vpninfo, "pre-init");
 
 	tun_fd = os_setup_tun(vpninfo);
@@ -1011,6 +1000,10 @@ int openconnect_setup_tun_device(struct openconnect_info *vpninfo,
 	if (vpninfo->tun_idx != -1)
 		script_setenv_int(vpninfo, "TUNIDX", vpninfo->tun_idx);
 #endif
+	legacy_ifname = openconnect_utf8_to_legacy(vpninfo, vpninfo->ifname);
+	script_setenv(vpninfo, "TUNDEV", legacy_ifname, 0, 0);
+	if (legacy_ifname != vpninfo->ifname)
+		free(legacy_ifname);
 	script_config_tun(vpninfo, "connect");
 
 	return openconnect_setup_tun_fd(vpninfo, tun_fd);
